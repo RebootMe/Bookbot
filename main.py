@@ -4,11 +4,15 @@ def main():
         file_contents = f.read()
 
     words=total_words(file_contents)
-    print(words)
 
     alphabets=total_alphabets(file_contents.lower())
-    return print(alphabets)
-
+    #print(alphabets)
+    print("--- Begin report of books/frankenstein.txt ---")
+    print(f"{words} words found in the document")
+    print("")
+    for alpha in alphabets:
+        print(f"The {alpha} character was found {alphabets[alpha]} times")
+    print("--- End report ---")
 
 def total_words(text):
     words=text.split()
